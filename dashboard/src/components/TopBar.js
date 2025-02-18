@@ -17,7 +17,6 @@ const TopBar = () => {
           <p className="percent"></p>
         </div>
       </div>
-
       <Menu />
     </div>
   );

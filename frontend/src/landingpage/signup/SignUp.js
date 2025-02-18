@@ -1,5 +1,5 @@
 import React from 'react';
-// import { ToastContainer, toast } from "react-toastify";
+import { ToastContainer, toast } from "react-toastify";
 import { Link, useNavigate } from "react-router-dom";
 import axios from "axios";
 import { useState } from 'react';
@@ -32,7 +32,7 @@ function SignUp() {
       const { success, message } = data;
       if (success) {
         setTimeout(() => {
-          window.location.href = "http://localhost:3000/login"
+          window.location.href = "http://localhost:3001/"
         }, 1000);
       } else {
        alert(message)
@@ -85,7 +85,7 @@ function SignUp() {
               required
             />
           </div>
-          <button type="submit">Signup</button>
+          <button type="submit">Submit</button>
           <span>
             Already have an account? <Link to={"/login"}>Login</Link>
           </span>

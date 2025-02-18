@@ -6,11 +6,8 @@ const port = process.env.port || 3002;
 const cors = require('cors');
 const authRoute = require("./Routes/AuthRoute.js");
 const bodyParser = require('body-parser');
-
-
 const {holding} = require("./model/holdingModel.js");
-
-const {position} = require('./model/PostionModel.js');
+const {position}= require("./model/PostionModel.js")
 const {OrderModel} = require("./model/OrderModel.js");
 const { default: mongoose } = require('mongoose');
 const cookieParser = require("cookie-parser");
@@ -51,14 +48,12 @@ app.delete("/delete/:id",async(req,res)=>{
   await OrderModel.findByIdAndDelete(id);
 })
 
-
 app.use('/',authRoute);
 mongoose.connect(uri,{
 })
 .then(() => console.log("MongoDB is  connected successfully"))
 .catch((err) => console.error(err));
-app.listen(3002,()=>{
-  console.log('listing on port',3002);
+app.listen(port,()=>{
+  console.log('listing on port',port);
 
 })
-
